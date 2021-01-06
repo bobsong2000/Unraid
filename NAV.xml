@@ -47,5 +47,5 @@
     </Volume>
   </Data>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <Icon>https://github.com/bobsong2000/unraid/raw/master/images/heimdall-icon.png</Icon>
+  <Icon>https://github.com/bobsong2000/unraid/raw/master/images/NAV-icon.png</Icon>
 </Containers>
