@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://github.com/bobsong2000/unraid/edit/master/NAV.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>NAV</Category>
+  <Name>NAV</Name>
+  <Description>
+  </Description>
+  <Overview>
+    NAV Server
+  </Overview>
+  <Repository>linuxserver/heimdall:amd64-latest</Repository>
+  <Project>https://hub.docker.com/r/linuxserver/heimdall/</Project>
+  <Registry>https://hub.docker.com/r/linuxserver/heimdall/</Registry>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+    <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+    </Networking>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/NAV</HostDir>
+      <ContainerDir>/var/www/localhost/heimdall/public</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <Icon>https://github.com/bobsong2000/unraid/raw/master/images/heimdall-icon.png</Icon>
+</Containers>

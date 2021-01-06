@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://github.com/bobsong2000/unraid/blob/master/qBittorrentEE.xml</TemplateURL>
+  <Category>Cloud: Network:Web Tools:</Category>
+  <Name>qBittorrentEE</Name>
+  <Description>
+    qBittorrent 中国优化版[br]
+    https://hub.docker.com/r/superng6/qbittorrentee
+  </Description>
+  <Repository>superng6/qbittorrentee:latest</Repository>
+  <Project>https://hub.docker.com/r/superng6/qbittorrentee</Project>
+  <Registry>https://hub.docker.com/r/superng6/qbittorrentee/</Registry>
+  <BindTime>true</BindTime>
+  <Privileged>true</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6881</HostPort>
+        <ContainerPort>6881</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6881</HostPort>
+        <ContainerPort>6881</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>WEBUI_PORT</Name>
+      <Value>8080</Value>
+    </Variable>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/qbittorrentEE</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Downloads</HostDir>
+      <ContainerDir>/downloads</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <Icon>https://github.com/bobsong2000/unraid/raw/master/images/qbittorrent-icon.png</Icon>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+</Container>
