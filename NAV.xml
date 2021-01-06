@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
-  <TemplateURL>https://github.com/bobsong2000/unraid/edit/master/NAV.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/bobsong2000/unraid/master/NAV.xml</TemplateURL>
   <Beta>False</Beta>
   <Category>NAV</Category>
   <Name>NAV</Name>
