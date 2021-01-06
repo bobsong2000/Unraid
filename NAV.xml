@@ -41,7 +41,7 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/NAV</HostDir>
+      <HostDir>/mnt/user/appdata/NAV</HostDir>
       <ContainerDir>/var/www/localhost/heimdall/public</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
