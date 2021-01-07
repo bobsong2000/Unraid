@@ -13,7 +13,7 @@
   <Category/>
   <WebUI>http://[IP]:[PORT:4533]/</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/deluan/navidrome/master/resources/logo-192x192.png</Icon>
+  <Icon>https://github.com/bobsong2000/unraid/raw/master/images/navidrome-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
