@@ -1,21 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <TemplateURL>https://raw.githubusercontent.com/bobsong2000/unraid/master/NAV.xml</TemplateURL>
-  <Beta>False</Beta>
-  <Category>NAV</Category>
-  <Name>NAV</Name>
-  <Description>
-  </Description>
-  <Overview>
-    NAV Server
-  </Overview>
-  <Repository>linuxserver/heimdall:amd64-latest</Repository>
-  <Project>https://hub.docker.com/r/linuxserver/heimdall/</Project>
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>heimdall</Name>
+  <Repository>linuxserver/heimdall</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/heimdall/</Registry>
-  <BindTime>true</BindTime>
+  <Network>br0</Network>
+  <MyIP>192.168.77.145</MyIP>
+  <Shell>sh</Shell>
   <Privileged>false</Privileged>
-    <Networking>
-    <Mode>bridge</Mode>
+  <Support>https://lime-technology.com/forums/topic/68194-support-linuxserverio-heimdall/</Support>
+  <Project>https://github.com/linuxserver/Heimdall</Project>
+  <Overview>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Overview>
+  <Category>Tools:Utilities Network:Web Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/heimdall.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1609978578</DateInstalled>
+  <DonateText>Donations</DonateText>
+  <DonateLink>https://www.linuxserver.io/donate/</DonateLink>
+  <Description>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Description>
+  <Networking>
+    <Mode>br0</Mode>
     <Publish>
       <Port>
         <HostPort>80</HostPort>
@@ -28,24 +35,36 @@
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
-    </Networking>
-  <Environment>
-    <Variable>
-      <Name>PUID</Name>
-      <Value>99</Value>
-    </Variable>
-    <Variable>
-      <Name>PGID</Name>
-      <Value>100</Value>
-    </Variable>
-  </Environment>
+  </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/NAV</HostDir>
-      <ContainerDir>/var/www/localhost/heimdall/public</ContainerDir>
+      <HostDir>/mnt/user/appdata/NAV/</HostDir>
+      <ContainerDir>/var/www/localhost/heimdall/public/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/heimdall</HostDir>
+      <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <Icon>https://github.com/bobsong2000/unraid/raw/master/images/NAV-icon.png</Icon>
-</Containers>
+  <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="http port" Target="80" Default="" Mode="tcp" Description="Port for http access" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="https port" Target="443" Default="" Mode="tcp" Description="Port for https access" Type="Port" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="html" Target="/var/www/localhost/heimdall/public/" Default="" Mode="rw" Description="Container Path: /var/www/localhost/heimdall/public/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/NAV/</Config>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/heimdall" Mode="rw" Description="appdata location" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/heimdall</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+</Container>
