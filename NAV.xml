@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>My NAV</Name>
+  <Name>MyNAV</Name>
   <Repository>linuxserver/heimdall</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/heimdall/</Registry>
   <Network>br0</Network>
-  <MyIP>192.168.77.145</MyIP>
+  <MyIP>192.168.77.144</MyIP>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://lime-technology.com/forums/topic/68194-support-linuxserverio-heimdall/</Support>
