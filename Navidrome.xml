@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>navidrome</Name>
+  <Repository>deluan/navidrome:latest</Repository>
+  <Registry>https://github.com/deluan/navidrome</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://github.com/deluan/navidrome</Project>
+  <Overview>https://www.navidrome.org/</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:4533]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/deluan/navidrome/master/resources/logo-192x192.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1609998189</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>https://www.navidrome.org/</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>4533</HostPort>
+        <ContainerPort>4533</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/navidrome</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/</HostDir>
+      <ContainerDir>/music</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Host Port 1" Target="4533" Default="" Mode="tcp" Description="&#x5BB9;&#x5668; Port: 4533" Type="Port" Display="always" Required="false" Mask="false">4533</Config>
+  <Config Name="Host Path 1" Target="/data" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/navidrome</Config>
+  <Config Name="Host Path 2" Target="/music" Default="" Mode="rw" Description="&#x5BB9;&#x5668; Path: /music" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Media/</Config>
+</Container>
