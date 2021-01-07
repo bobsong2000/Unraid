@@ -38,9 +38,9 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/heimdall/www</HostDir>
+      <HostDir>/mnt/user/appdata/www</HostDir>
       <ContainerDir>/var/www/localhost/heimdall/public</ContainerDir>
-      <Mode>rw</Mode>
+      <Mode>ro</Mode>
     </Volume>
     <Volume>
       <HostDir>/mnt/user/appdata/heimdall</HostDir>
@@ -63,7 +63,7 @@
   <Labels/>
   <Config Name="http port" Target="80" Default="" Mode="tcp" Description="Port for http access" Type="Port" Display="always" Required="false" Mask="false">80</Config>
   <Config Name="https port" Target="443" Default="" Mode="tcp" Description="Port for https access" Type="Port" Display="always" Required="false" Mask="false">443</Config>
-  <Config Name="html" Target="/var/www/localhost/heimdall/public" Default="" Mode="rw" Description="Container Path: /var/www/localhost/heimdall/public" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/heimdall/www</Config>
+  <Config Name="html" Target="/var/www/localhost/heimdall/public" Default="" Mode="ro" Description="my web path" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/www</Config>
   <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/heimdall" Mode="rw" Description="appdata location" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/heimdall</Config>
   <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
